@@ -9,11 +9,11 @@ public class minutos_pagos {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Quantos minutos consumiu? = " );
+        System.out.println("Quantos minutos consumiu? = ");
         int minutos = sc.nextInt();
 
         double conta = 50.0;
-        if (minutos > 100 ) {
+        if (minutos > 100) {
             conta += (minutos - 100) * 2.0;
         }
         System.out.printf("Valor a pagar = R$ %.2f\n", conta);
