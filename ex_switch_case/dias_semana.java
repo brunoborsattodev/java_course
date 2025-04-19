@@ -1,4 +1,4 @@
-package estrutura_condicional;
+package ex_switch_case;
 
 import java.util.Scanner;
 
