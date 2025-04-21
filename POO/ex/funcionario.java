@@ -28,8 +28,7 @@ public class funcionario {
         double percentage = sc.nextDouble();
         employee.IncreaseSalary(percentage);
 
-        System.out.print("Updated data = ");
-        System.out.println(employee);
+        System.out.print("Updated data = " + employee);
 
         sc.close();
     }

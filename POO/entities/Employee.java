@@ -5,16 +5,15 @@ public class Employee {
     public double grossSalary;
     public double tax;
 
-    public double NetSalary(){
+    public double NetSalary() {
         return grossSalary - tax;
     }
 
-    public void IncreaseSalary(double percentage){
-        double increase = grossSalary * (percentage / 100);
-        this.grossSalary += increase;
+    public void IncreaseSalary(double percentage) {
+       grossSalary += grossSalary * percentage / 100.0;
     }
 
-    public String toString(){
+    public String toString() {
         return name
                 + ", "
                 + " $ "

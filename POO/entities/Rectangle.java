@@ -11,7 +11,7 @@ public class Rectangle {
     }
 
     public double calculatePerimeter() {
-        return (2 * width) + (2 * height);
+        return 2 * (width + height);
     }
 
     public double calculateDiagonal() {
