@@ -24,7 +24,19 @@ public class produtoEmEstoque {
         System.out.print("Quantity in stock: ");
         product.quantity = sc.nextInt();
 
-        System.out.println(product.name + ", " + product.price + ", " + product.quantity);
+        System.out.println("\nProduct data: " + product);
+
+        System.out.println("Enter the number of products to be added in stock = ");
+        int quantity = sc.nextInt();
+        product.addProducts(quantity);
+
+        System.out.println("\nUpdated data: " + product);
+
+        System.out.println("Enter the number of products to be removed from stock = ");
+        quantity = sc.nextInt();
+        product.removeProducts(quantity);
+
+        System.out.println("\nUpdated data: " + product);
 
         sc.close();
     }
