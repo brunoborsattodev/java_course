@@ -1,4 +1,4 @@
-package POO.produto_estoque;
+package POO.ex;
 
 import POO.entities.Product;
 
