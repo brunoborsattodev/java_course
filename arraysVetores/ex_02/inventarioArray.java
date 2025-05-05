@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class inventarioArray {
     public static void main(String[] args) {
         // 1. introdução
-        System.out.println("---- Steam - GESTÃO DE INVENTÁRIOS ----\n");
+        System.out.println("\n---- Steam - GESTÃO DE INVENTÁRIOS ----\n");
 
         // 2. imprimir menu de opções
         System.out.println("1. adicionar item\n" +
@@ -20,7 +20,7 @@ public class inventarioArray {
         String[] inventario = {"", "", ""};
 
         do {
-            System.out.println("---------");
+            System.out.println("\n---------\n");
 
             // 4. mostrar o inventário do usuário
 
@@ -54,13 +54,17 @@ public class inventarioArray {
                 slot = sc.nextInt();
                 sc.nextLine();
                 inventario[slot] = "";
-                System.out.println("---------");
+                System.out.println("---------\n");
                 System.out.println("1. adicionar item\n" +
                         "2. remover item\n" +
                         "3. sair");
                 break;
             case 3:
                 //sair
+                System.out.println("Saindo...");
+                break;
+            default:
+                System.out.println("opção inválida!");
                 break;
         }
 
