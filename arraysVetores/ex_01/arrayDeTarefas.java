@@ -5,6 +5,10 @@ import java.util.Scanner;
 
 public class arrayDeTarefas {
     public static void main(String[] args) {
+
+        // tipoDeDado[] nomeVariavel = {valor, valor, valor};
+        // tipoDeDado[] nomeVariavel = new tipoDeDado [tamanho do vetor "ou variável que determine esse tamanho posteriormente"];
+
         Scanner sc = new Scanner(System.in);
 
         System.out.println("--- LISTA DE TAREFAS ---");
