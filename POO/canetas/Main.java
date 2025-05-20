@@ -54,6 +54,8 @@ public class Main {
         canetaAzul.escrever("Ola da caneta azul");
         canetaVermelha.escrever("Ola da caneta vermelha");
 
+
+
         sc.close();
     }
 }
