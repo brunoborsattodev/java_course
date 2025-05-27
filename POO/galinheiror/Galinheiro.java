@@ -65,6 +65,7 @@ public class Galinheiro {
     public int calcularValorOvoDiaria() {
         return this.calcularProducaoDiaria() * valorOvo;
     }
+
     public int calcularValorOvoMensal() {
         return this.calcularProducaoMensal() * valorOvo;
     }
@@ -75,9 +76,9 @@ public class Galinheiro {
         System.out.println("Nome: " + this.nome);
         System.out.println("Quantidade de Galinhas: " + this.qtdGalinhas);
         System.out.print("Quantidade de Ovos por Dia por Galinha: " + this.ovosPorDiaPorGalinha);
-                if(this.ovosPorDiaPorGalinha != 1) {
+        if (this.ovosPorDiaPorGalinha != 1) {
             System.out.println(" ovos.");
-        } else System.out.println(" ovo.");;
+        } else System.out.println(" ovo.");
         System.out.println("Data e Hora da Criação: " + this.dataHoraCriacao);
         System.out.println("Produção Diária: " + this.calcularProducaoDiaria() + " ovos.");
         System.out.println("Valor dos Ovos: " + this.calcularValorOvoDiaria());
