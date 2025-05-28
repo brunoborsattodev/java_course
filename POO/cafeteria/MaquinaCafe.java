@@ -1,4 +1,4 @@
-package POO.abstracaoEncapsulamento.cafeteria;
+package POO.cafeteria;
 
 public interface MaquinaCafe {
     void ligar();

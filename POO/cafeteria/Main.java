@@ -1,4 +1,4 @@
-package POO.abstracaoEncapsulamento.cafeteria;
+package POO.cafeteria;
 
 public class Main {
     public static void main(String[] args) {
