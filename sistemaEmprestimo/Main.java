@@ -1,19 +1,20 @@
 package sistemaEmprestimo;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+
         Emprestimo bruno = new Emprestimo
                 ("Bruno",
-                        11912831,
-                        12394312,
+                        1191281-2231,
+                        "123.943.232-45",
                         100,
                         5,
-                        0);
+                        TipoEmprestimo.CONSIGNADO);
+
         System.out.println("");
         int opcao = -1;
         while (opcao != 0) {
@@ -38,7 +39,8 @@ public class Main {
                     bruno.quitado();
                 }
                 default -> System.out.println("Opção inválida, tente novamente!");
-            };
+            }
+            ;
         }
         System.out.println("");
         bruno.dadosEmprestimo();

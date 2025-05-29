@@ -1,15 +1,32 @@
 package sistemaEmprestimo;
 
-public class Emprestimo extends Pessoa {
+public class Emprestimo extends Pessoa implements SistemaEmprestimo {
     protected double valor;
     protected int numeroParcelas;
     protected int numeroParcelasPagas;
+    protected TipoEmprestimo tipo;
+    protected int mesesParcelados;
+    protected double taxa = 2.5;
 
-    public Emprestimo(String nome, int telefone, int cpf, double valor, int numeroParcelas, int numeroParcelasPagas) {
+    public Emprestimo(String nome, int telefone, String cpf, double valor, int mesesParcelados, TipoEmprestimo tipo) {
         super(nome, telefone, cpf);
         this.valor = valor;
-        this.numeroParcelas = numeroParcelas;
-        this.numeroParcelasPagas = numeroParcelasPagas;
+        this.mesesParcelados = mesesParcelados;
+        this.tipo = tipo;
+    }
+
+    public double valorComTaxa() {
+        return this.valor * (1 + taxa / 100);
+    }
+
+    public void taxaEmprestimo() {
+        if (mesesParcelados > 5) {
+            this.valor = valorComTaxa();
+        }
+    }
+
+    public int getMesesParcelados() {
+        return mesesParcelados;
     }
 
     public double getValor() {
@@ -25,10 +42,12 @@ public class Emprestimo extends Pessoa {
     }
 
     public void dadosEmprestimo() {
+
         String valorFormatado = "R$: " + String.format("%.2f", getValor());
         System.out.printf(
                 "\n" +
                         "Nome: " + getNome() +
+                        "Tipo de Empréstimo: " + tipo.getDescricaoEmprestimo() +
                         "%nValor do Empréstimo: " + valorFormatado +
                         "%nParcelas Restantes: " + getNumeroParcelas() +
                         "%nParcelas Pagas: " + getNumeroParcelasPagas());
@@ -46,11 +65,14 @@ public class Emprestimo extends Pessoa {
         }
     }
 
+    @Override
     public void pagar(double parcelasPagas) {
-        this.numeroParcelas -= parcelasPagas;
+        this.numeroParcelas -= (int) parcelasPagas;
         this.numeroParcelasPagas += parcelasPagas;
         System.out.println("Pagamento realizado!");
     }
+
+    public void selecionarOpcao(int opcao) {
+
+    }
 }
-
-
