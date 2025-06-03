@@ -16,7 +16,7 @@ public class conta_bancaria {
 
         System.out.print("Insira o número da conta: ");
         int number = sc.nextInt();
-        System.out.println("Insira o nome do titular: ");
+        System.out.println("Insira o classe do titular: ");
         sc.nextLine();
         String titular = sc.nextLine();
         conta.setTitular(titular);
