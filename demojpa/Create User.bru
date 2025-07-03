@@ -1,0 +1,18 @@
+meta {
+  name: Create User
+  type: http
+  seq: 1
+}
+
+post {
+  url: http:localhost:8080/users
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "name": "Maria",
+    "age": 29
+  }
+}
