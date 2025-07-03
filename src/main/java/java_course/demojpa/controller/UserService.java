@@ -1,6 +1,7 @@
 package java_course.demojpa.controller;
 
 import java_course.demojpa.controller.dto.CreateUserDto;
+import java_course.demojpa.controller.dto.DeleteUserDto;
 import java_course.demojpa.controller.dto.UpdateUserDto;
 import java_course.demojpa.entity.UserEntity;
 import java_course.demojpa.entity.UserRepository;
@@ -59,5 +60,16 @@ public class UserService {
         if (!isNull(dto.age())){
             user.get().setAge(dto.age());
         }
+    }
+
+    public boolean deleteById(Long userId) {
+
+        var exists = userRepository.existsById(userId);
+
+        if (exists) {
+            userRepository.deleteById(userId);
+        }
+
+        return exists;
     }
 }

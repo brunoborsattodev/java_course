@@ -1,6 +1,7 @@
 package java_course.demojpa.controller;
 
 import java_course.demojpa.controller.dto.CreateUserDto;
+import java_course.demojpa.controller.dto.DeleteUserDto;
 import java_course.demojpa.controller.dto.UpdateUserDto;
 import java_course.demojpa.entity.UserEntity;
 import org.apache.catalina.User;
@@ -55,6 +56,17 @@ public class UserController {
         return user.isPresent() ?
                 ResponseEntity.noContent().build():
                 ResponseEntity.notFound().build();
+    }
+
+    @DeleteMapping(path = "/{userId}")
+    public ResponseEntity<Void> deleteUser(@PathVariable("userId") Long userId) {
+
+        var userDeleted = userService.deleteById(userId);
+
+        return userDeleted ?
+                ResponseEntity.noContent().build():
+                ResponseEntity.notFound().build();
+
     }
 }
 
