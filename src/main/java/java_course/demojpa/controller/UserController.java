@@ -1,8 +1,10 @@
 package java_course.demojpa.controller;
 
 import java_course.demojpa.controller.dto.CreateUserDto;
+import java_course.demojpa.controller.dto.UpdateUserDto;
 import java_course.demojpa.entity.UserEntity;
 import org.apache.catalina.User;
+import org.apache.coyote.Response;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -42,6 +44,16 @@ public class UserController {
 
         return user.isPresent() ?
                 ResponseEntity.ok(user.get()) :
+                ResponseEntity.notFound().build();
+    }
+
+    @PutMapping(path = "/{userId}")
+    public ResponseEntity<Void> updateUser(@PathVariable("userId") Long userId,
+                                           @RequestBody UpdateUserDto dto) {
+        var user = userService.updateById(userId, dto);
+
+        return user.isPresent() ?
+                ResponseEntity.noContent().build():
                 ResponseEntity.notFound().build();
     }
 }
