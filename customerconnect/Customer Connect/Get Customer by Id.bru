@@ -1,0 +1,20 @@
+meta {
+  name: Get Customer by Id
+  type: http
+  seq: 4
+}
+
+get {
+  url: http://localhost:8080/customers/4
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "fullName": "Joao",
+    "cpf": "456",
+    "email": "joao@email.com",
+    "phoneNumber": "2233-4455" 
+  }
+}
