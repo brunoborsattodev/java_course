@@ -1,0 +1,28 @@
+meta {
+  name: List Customers
+  type: http
+  seq: 3
+}
+
+get {
+  url: http://localhost:8080/customers?page=2&pageSize=1
+  body: json
+  auth: inherit
+}
+
+params:query {
+  page: 2
+  pageSize: 1
+  ~orderBy: asc
+  ~cpf: 456
+  ~email: bruno@email.com
+}
+
+body:json {
+  {
+    "fullName": "Joao",
+    "cpf": "456",
+    "email": "joao@email.com",
+    "phoneNumber": "2233-4455" 
+  }
+}
